@@ -1,0 +1,16 @@
+Management System with PHP & MySQL
+
+/RFID document tracking
+
+
+index.php
+dashboard.php
+top_menus.php
+admin.php
+Superadmin.php
+secretary.php
+file_data.php
+User.php: A class contains users methods.
+Admin.php: A class contains methods related to admin.
+Secretary.php: A class contains methods related to secretary.
+User_module.php: A class contains methods related to accepting(to edit, transmit, and send to the primary server)
