@@ -1,0 +1,21 @@
+
+    if($this->name) {
+
+        $stmt = $this->conn->prepare("
+        INSERT INTO ".$this->admin2Table."(`name`, `emailID`, `department`, `access level`, `documents assigned`,`admin2priviledges`,`password`)
+        VALUES(?,?,?,?,?,?,?)");
+    
+        $this->name = htmlspecialchars(strip_tags($this->name));
+        $this->email = htmlspecialchars(strip_tags($this->email));
+        $this->mobile = htmlspecialchars(strip_tags($this->mobile));
+        $this->address = htmlspecialchars(strip_tags($this->address));    
+        $this->fee = htmlspecialchars(strip_tags($this->fee));    
+        $this->specialization = htmlspecialchars(strip_tags($this->specialization));
+        $this->password = md5($this->password);                
+        
+        $stmt->bind_param("ssssiss", $this->name, $this->emailID, $this->Department, $this->access level, $this->document assigned, $this->admin2Priviledges, $this->password);
+        
+        if($stmt->execute()){
+            return true;
+        }        
+    
