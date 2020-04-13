@@ -1,0 +1,13 @@
+createMySQL database tables to develop a trace interaction system system to store Administrators, Senior_Admin, Access users and ordinary_user details.
+
+
+rfid_users
+
+CREATE TABLE `rfid_users` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `password` varchar(64) NOT NULL,
+  `role` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
