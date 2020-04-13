@@ -1,0 +1,4 @@
+$Admin = new Admin($db);
+
+if(!empty($_POST['action']) && $_POST['action'] == 'listadmin2') {
+    $admin2->listadmin2();
