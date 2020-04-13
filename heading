@@ -1,0 +1,37 @@
+
+
+<div>     
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-10">
+                <h3 class="panel-title"></h3>
+            </div>
+            <?php if($_SESSION["role"] != 'secretary') { ?>
+            <div class="col-md-2" align="right">
+                <button type="button" id="addsecretary" class="btn btn-info" title="Add secretary"><span class="glyphicon glyphicon-plus"></span></button>
+            </div>
+            <?php } ?>
+        </div>
+    </div>
+    <table id="secretartListing" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>                    
+                <th>emailID</th>    
+                <th>admin-response</th>    
+                <th>accept
+#edit and share file</th>
+                <th>reject
+#a button to explain why the file was rejected</th>
+                <th>Address</th>
+                <th>edit/transer History</th>
+                <th></th>
+                <th></th>    
+                <th></th>                    
+            </tr>
+        </thead>
+    </table>
+</div
+
+
