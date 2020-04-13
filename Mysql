@@ -1,0 +1,59 @@
+ $sqlWhere = '';
+    if($_SESSION["role"] == 'admin2') {
+        $sqlWhere = " WHERE id = '".$_SESSION["userid"]."'";
+    }    
+    
+    $sqlQuery = "SELECT * FROM ".$this->admin2Table." $sqlWhere ";
+    
+    if(!empty($_POST["search"]["value"])){
+        $sqlQuery .= ' AND (id LIKE "%'.$_POST["search"]["value"].'%" ';
+        $sqlQuery .= ' OR name LIKE "%'.$_POST["search"]["value"].'%" ';            
+        $sqlQuery .= ' OR mobile LIKE "%'.$_POST["search"]["value"].'%" ';
+        $sqlQuery .= ' OR address LIKE "%'.$_POST["search"]["value"].'%" ';
+        $sqlQuery .= ' OR fee LIKE "%'.$_POST["search"]["value"].'%" ';
+        $sqlQuery .= ' OR specialization LIKE "%'.$_POST["search"]["value"].'%") ';                                
+    }
+    
+    if(!empty($_POST["order"])){
+        $sqlQuery .= 'ORDER BY '.$_POST['order']['0']['column'].' '.$_POST['order']['0']['dir'].' ';
+    } else {
+        $sqlQuery .= 'ORDER BY id DESC ';
+    }
+    
+    if($_POST["length"] != -1){
+        $sqlQuery .= 'LIMIT ' . $_POST['start'] . ', ' . $_POST['length'];
+    }
+    
+    $stmt = $this->conn->prepare($sqlQuery);
+    $stmt->execute();
+    $result = $stmt->get_result();    
+    $stmtTotal = $this->conn->prepare("SELECT * FROM ".$this->Admmin2Table." $sqlWhere " );
+    $stmtTotal->execute();
+    $allResult = $stmtTotal->get_result();
+    $allRecords = $allResult->num_rows;
+    
+    $displayRecords = $result->num_rows;
+    $records = array();        
+    while ($admin2 = $result->fetch_assoc()) {                 
+        $rows = array();            
+        $rows[] = $admin2['id'];
+        $rows[] = ucfirst($Admin2['name']);
+        $rows[] = $admin2['emailID'];        
+        $rows[] = $admin['department'];    
+        $rows[] = $admin2['Access level'];    
+        $rows[] = $admin2['document assigned'];    
+    
+    $output = array(
+        "draw"    =>    intval($_POST["draw"]),            
+        "iTotalRecords"    =>     $displayRecords,
+        "iTotalDisplayRecords"    =>  $allRecords,
+        "data"    =>     $records
+    );
+    
+    echo json_encode($output);
+}
+
+
+
+
+
