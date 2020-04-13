@@ -1,0 +1,25 @@
+         <label class="radio-inline">
+                  <input type="radio" name="loginType" value="admin">Administrator
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="loginType" value="Junioradmin">JUNIOR ADMIN
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="loginType" value="DocumentID">DocumentID
+                </label>
+                
+                <div style="margin-top:10px" class="form-group">                               
+                    <div class="col-sm-12 controls">
+                      <input type="submit" name="login" value="Login" class="btn btn-info">                          
+                    </div>                        
+                </div>                
+            </form>   
+        </div>                     
+    </div>  
+</div>         
+    <div class="col-md-6">                    
+    <div class="panel panel-info">
+        <div class="panel-heading" style="background:#00796B;color:white;">
+            <div class="panel-title">Admin Log In</div>                        
+        </div>
+
