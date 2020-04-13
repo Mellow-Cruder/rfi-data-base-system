@@ -1,0 +1,31 @@
+<div>     
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-md-10">
+                <h3 class="panel-title"></h3>
+            </div>
+            <?php if($_SESSION["role"] == 'secretary') { ?>
+            <div class="col-md-2" align="right">
+                <button type="button" id="createRFIDTrace" class="btn btn-info" title="Create RFIDTrace"><span class="glyphicon glyphicon-plus"></span></button>
+            </div>
+            <?php } ?>
+        </div>
+    </div>
+    <table id="RFIDTraceListing" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>secretary</th>
+                <th>secretary</th>                    
+                <th>admin access</th>    
+                <th>DocumentID</th>    
+                <th>Document_ID</th>
+                <th>Document_ref</th>
+                <th>Status</th>
+                <th></th>
+                <th></th>    
+                <th></th>                    
+            </tr>
+        </thead>
+    </table>
+</div>
