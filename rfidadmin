@@ -1,0 +1,12 @@
+ rfid_admin
+
+ CREATE TABLE `_juniorAdmin` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `address` text NOT NULL,
+  `mobile` varchar(255) NOT NULL,
+  `fee` int(11) NOT NULL,
+  `accessLevel` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
