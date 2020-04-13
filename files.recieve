@@ -1,0 +1,13 @@
+The next table logs every file the secretary sends out, edits or receives.
+
+CREATE TABLE `rfid_log` (
+  `id` int(11) NOT NULL,
+  `document_id` int(11) NOT NULL,
+  `chipset_id` int(11) NOT NULL,
+  `admin_access_id` int(11) NOT NULL,
+  `document_name` int(11) NOT NULL,
+  `document_type` varchar(255) NOT NULL,
+  `lastUpdate_time` varchar(255) NOT NULL,
+  `created` datetime NOT NULL DEFAULT current_timestamp(),
+  `status` enum('Active','Cancelled','Completed','') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
